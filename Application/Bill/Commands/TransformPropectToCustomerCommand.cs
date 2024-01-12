@@ -1,5 +1,5 @@
 ﻿using CRM.Domain;
-using CRM.Persistence;
+using CRM.Infrasctructure.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;

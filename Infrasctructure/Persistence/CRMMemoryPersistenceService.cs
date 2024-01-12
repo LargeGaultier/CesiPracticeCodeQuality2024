@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CRM.Persistence
+namespace CRM.Infrasctructure.Persistence
 {
     public class CRMMemoryPersistenceService
     {
@@ -25,6 +25,6 @@ namespace CRM.Persistence
         public List<Customer> Customers { get; set; }
         public List<Quotation> Quotations { get; set; }
         public List<Adress> Adresses { get; set; }
-            public List<CustomerSaleContact> CustomerSaleContacts { get; set; }
+        public List<CustomerSaleContact> CustomerSaleContacts { get; set; }
     }
 }
