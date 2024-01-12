@@ -1,4 +1,5 @@
 ﻿using CRM.Infrasctructure.Persistence;
+using CRM.Shared.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,8 @@ namespace CRM.Application.Customer.Queries
 {
     public class GetCustomerNumberQuery
     {
-        private readonly PersistenceService _persistenceService;
-        public GetCustomerNumberQuery(PersistenceService persistenceService)
+        private readonly IPersistenceService _persistenceService;
+        public GetCustomerNumberQuery(IPersistenceService persistenceService)
         {
             _persistenceService = persistenceService;
         }
