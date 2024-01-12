@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CRM.Shared.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,14 +7,13 @@ using System.Threading.Tasks;
 
 namespace CRM.Domain
 {
-    public class Bill
+    public class Bill : BaseEntity
     {
 
         public Bill()
         {
            
         }
-        public int Id { get; set; }
         public DateTime DateCreation { get; set; }
         public string BillNumber { get; set; }
         public string BillType { get; set; }

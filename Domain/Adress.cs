@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CRM.Shared.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace CRM.Domain
 {
-    public class Adress
+    public class Adress : BaseEntity
     {
-        public int Id { get; set; }
         public string AdressType { get; set; }
         public string Street { get; set; }
         public string StreetNumber { get; set; }
