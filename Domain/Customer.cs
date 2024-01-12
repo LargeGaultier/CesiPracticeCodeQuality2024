@@ -1,4 +1,5 @@
-﻿using CRM.Shared.Domain;
+﻿using CRM.Domain.Enum;
+using CRM.Shared.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace CRM.Domain
     public class Customer : BaseEntity
     {
         //constructeur paremetré
-        public Customer(string companyName, CustomerType type)
+        public Customer(string companyName, EnumCustomerType type)
         {
             CompanyName = companyName;
             Type = type;
@@ -19,7 +20,7 @@ namespace CRM.Domain
 
         public string CompanyName { get; set; }
         
-        public CustomerType Type { get; set; }
+        public EnumCustomerType Type { get; set; }
 
         public List<Contact> Contacts { get; set; }
         public List<Adress> Adresses { get; set; }  
@@ -30,9 +31,5 @@ namespace CRM.Domain
 
     
 
-    public enum CustomerType
-    {
-        Prospect,
-        Customer
-    }
+   
 }

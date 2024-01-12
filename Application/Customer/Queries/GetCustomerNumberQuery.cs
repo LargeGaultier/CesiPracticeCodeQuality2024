@@ -9,15 +9,15 @@ namespace CRM.Application.Customer.Queries
 {
     public class GetCustomerNumberQuery
     {
-        private readonly CRMMemoryPersistenceService _cRMMemoryPersistenceService;
-        public GetCustomerNumberQuery(CRMMemoryPersistenceService cRMMemoryPersistenceService)
+        private readonly PersistenceService _persistenceService;
+        public GetCustomerNumberQuery(PersistenceService persistenceService)
         {
-            _cRMMemoryPersistenceService = cRMMemoryPersistenceService;
+            _persistenceService = persistenceService;
         }
 
         public int Execute()
         {
-            return _cRMMemoryPersistenceService.Customers.Count(x=> x.Type != Domain.CustomerType.Prospect);
+            return _persistenceService.CustomerRepository.GetAll().Count(x=> x.Type != Domain.Enum.EnumCustomerType.Prospect);
         }
     }
 }

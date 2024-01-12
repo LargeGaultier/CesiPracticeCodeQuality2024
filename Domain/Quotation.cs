@@ -1,4 +1,5 @@
-﻿using CRM.Shared.Domain;
+﻿using CRM.Domain.Enum;
+using CRM.Shared.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace CRM.Domain
         public DateTime DateCreation { get; set; }
         public string QuotationNumber { get; set; }
         public string QuotationType { get; set; }
-        public QuotationStatus QuotationStatus { get; set; }
+        public EnumQuotationStatus QuotationStatus { get; set; }
         public decimal Amount { get; set; }
         public OfferType OfferType { get; set; }
         
@@ -20,10 +21,5 @@ namespace CRM.Domain
 
         
     }
-    public enum QuotationStatus
-    {
-        accepted,
-        refused,
-        pending
-    }
+ 
 }

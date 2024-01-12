@@ -1,4 +1,5 @@
 ﻿using CRM.Infrasctructure.Persistence;
+using CRM.Shared.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +10,16 @@ namespace CRM.Application.Customer.Commands
 {
     public class CreateCustomerCommand
     {
-        private readonly CRMMemoryPersistenceService _cRMMemoryPersistenceService;  
-        public CreateCustomerCommand(CRMMemoryPersistenceService cRMMemoryPersistenceService)
+        private readonly IPersistenceService _cRMMemoryPersistenceService;  
+        public CreateCustomerCommand(IPersistenceService cRMMemoryPersistenceService)
         {
             _cRMMemoryPersistenceService = cRMMemoryPersistenceService;
         }
 
-        public void Execute(Domain.Customer customer)
+        public void Execute(CustomerDTO customerToAdd)
         {
-            _cRMMemoryPersistenceService.Customers.Add(customer);
+            _cRMMemoryPersistenceService.CustomerRepository.Add(
+                new Domain.Customer(customerToAdd.CompanyName, customerToAdd.Type));
         }
     }
 }
